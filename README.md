@@ -1,7 +1,7 @@
 # SortedNameWithJava
 Same assessment for the unsorted-name-list.txt of LastNames and GivenNames
-Two comparators with one NameSortWay Interface with Main function following SOLID priciple
-of OOP in java
+Two comparators with one NameSortWay Interface with Main function following SOLID principle
+of OOP in Java
 
 #Workflow
 name: SortedNameWithJava
@@ -47,5 +47,3 @@ jobs:
         java-version: '11'
 
     - name: Deploy to Production
-      run: |
-        # Add your deployment script/commands here
