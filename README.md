@@ -4,7 +4,7 @@ Two comparators with one NameSortWay Interface with Main function following SOLI
 of OOP in java
 
 #Workflow
-name: Java CI/CD
+name: SortedNameWithJava
 
 on:
   push:
@@ -24,11 +24,14 @@ jobs:
       with:
         java-version: '11'
 
-    - name: Build with Maven
-      run: mvn clean install
+    - name: Build your project
+      run: |
+        # Add your build commands here
+        # For example, if you're using Gradle: ./gradlew build
 
     - name: Run tests
-      run: mvn test
+      run: |
+        # Add your test commands here
 
   deploy:
     needs: build
@@ -46,4 +49,3 @@ jobs:
     - name: Deploy to Production
       run: |
         # Add your deployment script/commands here
-        # This could involve copying artifacts to a server or deploying to a cloud platform
