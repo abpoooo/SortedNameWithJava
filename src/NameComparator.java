@@ -29,7 +29,7 @@ public class NameComparator {
 
         private String[] GetGivenNames(String name2) {
             String[] parts = name2.split(" ");
-            return Arrays.copyOfRange(parts, 0, parts.length - 1);
+            return Arrays.copyOfRange(parts, 0, parts.length - 2);
         }
     }
 
