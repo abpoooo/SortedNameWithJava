@@ -1,5 +1,5 @@
 import java.util.List;
 
 public interface NameSortedWay {
-    void sort(List<String> names);
+    List<String> sort(List<String> names);
 }

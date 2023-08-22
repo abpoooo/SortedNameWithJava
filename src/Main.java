@@ -24,27 +24,29 @@ public class Main {
 
         public void run(String inputFileName, String outputFileName) throws IOException {
             List<String> unsortedNames = new ArrayList<>();
+            List<String> sortedNames = new ArrayList<>();
             Scanner scanner = new Scanner(new File(inputFileName));
             while (scanner.hasNextLine()) {
                 unsortedNames.add(scanner.nextLine());
             }
             scanner.close();
 
-            sorting.sort(unsortedNames);
+            sortedNames = sorting.sort(unsortedNames);
 
             for (String name : unsortedNames) {
                 System.out.println("before " + name);
             }
 
             PrintWriter writer = new PrintWriter(new FileWriter(outputFileName));
-            for (String name : unsortedNames) writer.println(name);
+            for (String name : sortedNames) writer.println(name);
             writer.flush();
             writer.close();
         }
 
         static class LastNameGivenNamesSortingStrategy implements NameSortedWay {
-            public void sort(List<String> names) {
+            public List<String> sort(List<String> names) {
                 Collections.sort(names, new NameComparator.LastNameComparator().thenComparing(new NameComparator.GivenNamesComparator()));
+                return names;
             }
         }
 
